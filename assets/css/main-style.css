@@ -1,0 +1,57 @@
+body {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+.row .row {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+code {
+    background-color: #262626;
+}
+
+.db {
+    color: #2f6f9f;
+}
+
+.lb {
+    color: #4ddbff;
+}
+
+.o {
+    color:  #ff704d;
+}
+
+.b {
+    color: #4d94ff;
+}
+
+.w {
+    color: #ffffff;
+}
+
+.g {
+    color: #40bf40;
+}
+
+.tl {
+    color: #00cc99;
+}

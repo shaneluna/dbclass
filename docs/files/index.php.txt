@@ -1,0 +1,41 @@
+<?php 
+/**
+ * This is a test html file.
+ * This file is the index file.
+ */
+
+include 'database.class.php'; 
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dbClass</title> 
+    </head>
+    <body bgcolor="#00abec">
+        <div id="feature">
+            <div id="content">
+                <h1 id="siteCreated">This web site has been successfully created</h1>
+                <p id="goDo">There is nothing here yet, but Windows Azure Pack Websites makes it simple to publish content with GIT, FTP or your favorite development tool.</p>
+                <p>
+                    <?php
+                    //mysql with user pass
+                    //$database = new Database("mysql", "sq-azmgmt-d001", "safetypledgedb", "sluna", "Sh4n3Lun4");
+                    //mysql withOUT user pass
+                    //CAN'T TEST THIS ONE ATM
+                    //$database = new Database("mysql", "sq-azmgmt-d001", "safetypledgedb", "", "");
+
+                    //sqlsrv with user pass
+                    //$database = new Database("sqlsrv", "sq-ent12-d01\dev", "HR_Repository", "hr_user", "readonly");
+                    //sqlsrv withOUT user pass
+                    $database = new Database("sqlsrv", "sq-ent12-d01\dev", "HR_Repository", "", "");
+                    echo $database->selectVersion();
+                    $database->query("SELECT * FROM resource_denorm WHERE EmpNo = :empid AND Resource_Status =  'A'");
+                    $database->bindValue(":empid", "86487");
+                    echo $database->execute();
+                    $database->disconnect();
+                    ?>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

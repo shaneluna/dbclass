@@ -1,0 +1,47 @@
+<?php
+//                    mysql with user pass
+                    $database = new Database("mysql", "sq-azmgmt-d001", "safetypledgedb", "sluna", "Sh4n3Lun4");
+                    //echo $database->selectVersion();
+                    $database->query("SELECT * FROM pledgedadmin WHERE lanid = :lanid");
+                    $database->bindValue(":lanid", "stluna");
+                    //$database->debugDumpParams();
+                    echo $database->toJSON($database->XAGsingle());
+                    
+                    
+                    
+//                    mysql withOUT user pass
+//                    CAN'T TEST THIS ONE ATM
+//                    $database = new Database("mysql", "sq-azmgmt-d001", "safetypledgedb", "", "");
+
+//                    sqlsrv with user pass
+//                    $database = new Database("sqlsrv", "sq-ent12-d01\dev", "HR_Repository", "hr_user", "readonly");
+                    
+//                    sqlsrv withOUT user pass
+//                    $database = new Database("sqlsrv", "sq-ent12-d01\dev", "HR_Repository", "", "");
+            
+//                    echo $database->selectVersion();
+//                    $database->query("SELECT * FROM resource_denorm WHERE EmpNo = :empid AND Resource_Status =  'A'");
+//                    $database->query("SELECT * FROM resource_denorm WHERE (EmpNo = :empid OR EmpNo = :empid2) AND Resource_Status =  'A'");
+//                    $database->bindValue(":empid", "86487");
+//                    $database->bindValue(":empid2", "92627", PDO::PARAM_STR);
+//                    $database->bindParam(":empid", "86487", PDO::PARAM_STR);
+//                    $database->bindParam(":empid2", "92627", PDO::PARAM_STR);
+//                    $database->debugDumpParams();
+//                    echo $database->toJSON($database->XAGresultset());
+//                    echo $database->toJSON($database->XAGresultset());
+//                    echo $database->rowCount();
+//                    $database->disconnect();
+                    
+//                    WITHOUT CLASS
+//                    $dbh = new PDO( "sqlsrv:Server=sq-ent12-d01\dev;Database=HR_Repository"); 
+//                    $dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+//                    $sth = $dbh->prepare("SELECT * FROM resource_denorm WHERE (EmpNo = :empid OR EmpNo = :empid2) AND Resource_Status =  'A'");
+//                    $sth->bindValue(':empid', "86487", PDO::PARAM_STR);
+//                    $sth->bindValue(':empid2', "92627", PDO::PARAM_STR);
+//                    $sth->execute();
+//                    
+//                    print $row = $sth->fetchAll(PDO::FETCH_ASSOC);
+//                    $formattedData = json_encode($row);
+//                    print $formattedData;
+//                    $dbh = null;    
+                    ?>
